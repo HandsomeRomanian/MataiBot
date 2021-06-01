@@ -8,7 +8,7 @@ const configManager = new ConfigManager();
 const bot = new Bot(new Client(), process.env.TOKEN, configManager);
 
 bot.listen().then(() => {
-    console.log('Logged in! Hello')
+    console.log("Online!")
 }).catch((error) => {
     console.log('Oh no! ', error)
 });
