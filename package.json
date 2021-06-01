@@ -2,19 +2,10 @@
   "name": "discordbottemplate",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
-  "dependencies": {
-    "@discordjs/opus": "^0.1.0",
-    "bufferutil": "^4.0.1",
-    "discord.js": "^12.1.1",
-    "erlpack": "github:discordapp/erlpack",
-    "opusscript": "0.0.7",
-    "utf-8-validate": "^5.0.2",
-    "ytdl-core-discord": "^1.1.0"
-  },
-  "devDependencies": {},
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon",
+    "start": "ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -25,5 +16,24 @@
   "bugs": {
     "url": "https://github.com/HandsomeRomanian/DiscordBotTemplate/issues"
   },
-  "homepage": "https://github.com/HandsomeRomanian/DiscordBotTemplate#readme"
+  "homepage": "https://github.com/HandsomeRomanian/DiscordBotTemplate#readme",
+  "dependencies": {
+    "@types/filesystem": "0.0.30",
+    "@types/node": "^15.6.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "inversify": "^5.1.1",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0",
+    "nodemon": "^2.0.7",
+    "ts-mockito": "^2.6.1",
+    "ts-node": "^10.0.0",
+    "tsc-watch": "^4.4.0"
+  }
 }
