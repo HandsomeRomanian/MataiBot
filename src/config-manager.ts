@@ -1,16 +1,15 @@
-import { AutoReact } from "./models/autoreact";
-import { readFile, writeFile } from "fs";
+import { AutoReact } from './models/autoreact';
+import { readFile, writeFile } from 'fs';
 
 export class ConfigManager {
 
     private _config: Config = new Config();
-    private _path: string = "./src/config.json";
+    private _path: string = './src/config.json';
 
     constructor() {
         readFile(this._path, (err, data) => {
             if (err?.errno == -4058) {
-                const out = JSON.stringify(this._config);
-                writeFile(this._path, out as string, (err) => {
+                writeFile(this._path, JSON.stringify(this._config), (err) => {
                     if (err) console.log('error', err);
                 });
             } else {
@@ -19,12 +18,18 @@ export class ConfigManager {
         })
     }
 
-    public get config() {
+    public get config(): Config {
         return this._config;
+    }
+
+    public saveConfig(): void {
+        writeFile(this._path, JSON.stringify(this._config), (err) => {
+            if (err) console.log('error', err);
+        });
     }
 }
 
 class Config {
-    prefix: string = 'test';
+    prefix: string = '!';
     autoreacts: AutoReact[] = [];
 }
