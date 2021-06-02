@@ -2,10 +2,11 @@ import { Client, Message } from "discord.js";
 import { AddReaction, Command } from "../commands";
 import { ConfigManager } from "./config-manager";
 import { container } from "tsyringe";
+import { Ping } from "../commands/ping";
 
 export class CommandManager {
 
-    private readonly commands: Command[] = [new AddReaction()]
+    private readonly commands: Command[] = [new AddReaction(), new Ping()]
 
     constructor(client: Client) {
         const configManager = container.resolve(ConfigManager);
@@ -18,6 +19,6 @@ export class CommandManager {
                         }
                     })
                 }
-        })
+        });
     }
 }
