@@ -1,6 +1,7 @@
-import { AutoReact } from './models/autoreact';
+import { AutoReact } from '../models/autoreact';
 import { readFile, writeFile } from 'fs';
-
+import { singleton } from "tsyringe";
+@singleton()
 export class ConfigManager {
 
     private _config: Config = new Config();

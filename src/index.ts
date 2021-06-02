@@ -1,11 +1,9 @@
 require('dotenv').config(); // Recommended way of loading dotenv
-
+import "reflect-metadata";
 import { Bot } from "./bot";
 import { Client } from "discord.js";
-import { ConfigManager } from "./config-manager";
 
-const configManager = new ConfigManager();
-const bot = new Bot(new Client(), process.env.TOKEN, configManager);
+const bot = new Bot(new Client(), process.env.TOKEN);
 
 bot.listen().then(() => {
     console.log("Online!")
