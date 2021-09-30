@@ -5,5 +5,5 @@ export interface Command {
     name: string;
     authorizeBots: boolean;
 
-    doPerform(message: Message)
+    doPerform(message: Message): void;
 }
